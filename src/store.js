@@ -28,7 +28,4 @@ const messageReducer = (state = [], action) => {
 
 const store = createStore(messageReducer);
 
-// store.dispatch(addMessage('Read the docs'));
-// console.log(store.getState());
-
 export { store, mapStateToProps, mapDispatchToProps };
