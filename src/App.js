@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import DisplayMessages from './DisplayMessages';
 
-function App() {
+function App(props) {
 	return (
 		<div className="App">
-			<DisplayMessages />
-
 			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
+				<DisplayMessages messages={props.messages} submitNewMessage={props.submitNewMessage} />
+
+				{/* <img src={logo} className="App-logo" alt="logo" />
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
 				</p>
@@ -19,7 +19,7 @@ function App() {
 					rel="noopener noreferrer"
 				>
 					Learn React
-				</a>
+				</a> */}
 			</header>
 		</div>
 	);

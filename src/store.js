@@ -2,6 +2,15 @@ import { createStore } from 'redux';
 
 const ADD = 'ADD';
 
+const mapStateToProps = (state) => ({ messages: state });
+const mapDispatchToProps = (dispatch) => {
+	return {
+		submitNewMessage: (message) => {
+			dispatch(addMessage(message));
+		},
+	};
+};
+
 const addMessage = (message) => ({
 	type: ADD,
 	message,
@@ -19,7 +28,7 @@ const messageReducer = (state = [], action) => {
 
 const store = createStore(messageReducer);
 
-store.dispatch(addMessage('Read the docs'));
+// store.dispatch(addMessage('Read the docs'));
 // console.log(store.getState());
 
-export default store;
+export { store, mapStateToProps, mapDispatchToProps };
